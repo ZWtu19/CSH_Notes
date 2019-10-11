@@ -73,3 +73,15 @@ git config user.email '用户邮箱'
 git remote add origin git@(Host名):仓库地址
 git 文件操作
 ```
+
+##### 5.出现无法连接github导致push、clone等操作无法完成的情况
+
+1. 检查网络连接  
+2. 检查ssh服务是否开启  
+3. 检查22端口是否打开  
+4. 检查hosts代理是否可行  
+
+本人在使用git push时出现了push失败的情况，检查后发现ping github.com 显示连接不上，推断是hosts代理的问题，遂去网上查询了github官网的若干ip地址  
+（百度 域名ip查询即可），在找到可ping通的ip后，将'ip地址  github.com'加到/private/etc/hosts 的最后；
+修改hosts后即可ping通，也可以完成上传下载的功能了。
+
